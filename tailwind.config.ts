@@ -1,4 +1,5 @@
 import { Poppins } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -16,7 +17,17 @@ const config: Config = {
       },
       fontFamily: {
         poppins: ["var(--font-poppins)"],
-        mont: ["--font-mont"],
+        mont: ["var(--font-mont)"],
+        dm: ["var(--font-dm)"],
+      },
+
+      screens: {
+        mob: { max: "768px" },
+        tab: { max: "991px" },
+      },
+      colors: {
+        primary: "#171636",
+        secondary: "#FFFFFF",
       },
     },
   },

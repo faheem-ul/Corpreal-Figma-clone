@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
-import { Montserrat } from "next/font/google";
+import { Poppins, Montserrat, DM_Sans } from "next/font/google";
+
 import "./globals.css";
 
 const poppins = Poppins({
@@ -15,6 +15,12 @@ const mont = Montserrat({
   variable: "--font-mont",
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
+const dm = DM_Sans({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-dm",
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+});
 
 export const metadata: Metadata = {
   title: "Corpreal",
@@ -23,14 +29,16 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-  useMontserrat = false,
-}: Readonly<{
+}: // useMontserrat = false,
+// useDm = true,
+Readonly<{
   children: React.ReactNode;
-  useMontserrat?: boolean;
+  // useMontserrat?: boolean;
+  // useDm?: boolean;
 }>) {
   return (
     <html lang="en">
-      <body className={useMontserrat ? mont.className : poppins.className}>
+      <body className={` ${poppins.variable} ${mont.variable} ${dm.variable}`}>
         {children}
       </body>
     </html>
