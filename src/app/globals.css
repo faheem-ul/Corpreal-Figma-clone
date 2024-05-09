@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  h1 {
+    @apply text-[40px] font-[700] text-primary leading-[43.2px] font-mont;
+  }
+  h2 {
+    @apply text-[24px] font-[700] text-secondary leading-[31.2px] font-mont;
+  }
+}
